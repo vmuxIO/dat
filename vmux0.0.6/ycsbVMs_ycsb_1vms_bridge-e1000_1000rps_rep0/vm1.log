@@ -1,0 +1,47 @@
+/nix/store/2vwkssqpzykk37r996cafq7x63imf4sp-openjdk-21+35/bin/java  -classpath /nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/conf:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/core-0.17.0.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/HdrHistogram-2.1.4.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/htrace-core4-4.1.0-incubating.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/jackson-core-asl-1.9.4.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/jackson-mapper-asl-1.9.4.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/redis-binding/lib/commons-pool2-2.4.2.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/redis-binding/lib/jedis-2.9.0.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/redis-binding/lib/redis-binding-0.17.0.jar site.ycsb.Client -t -db site.ycsb.db.RedisClient -s -P /home/host/vmuxIO/test/moonprogs//../../ycsb/share/workloads/workloada -p redis.host=10.1.0.2 -p redis.port=6379 -p operationcount=61000 -threads 1 -target 1000
+Command line: -t -db site.ycsb.db.RedisClient -s -P /home/host/vmuxIO/test/moonprogs//../../ycsb/share/workloads/workloada -p redis.host=10.1.0.2 -p redis.port=6379 -p operationcount=61000 -threads 1 -target 1000
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-06-13 17:32:06:864 0 sec: 0 operations; est completion in 0 second 
+2024-06-13 17:32:16:707 10 sec: 9891 operations; 989.1 current ops/sec; est completion in 52 seconds [READ: Count=4996, Max=46367, Min=112, Avg=284.55, 90=271, 99=819, 99.9=5931, 99.99=46367] [UPDATE: Count=4907, Max=7347, Min=108, Avg=273.76, 90=284, 99=921, 99.9=4551, 99.99=7347] 
+2024-06-13 17:32:26:707 20 sec: 19891 operations; 1000 current ops/sec; est completion in 42 seconds [READ: Count=5023, Max=12799, Min=112, Avg=252.28, 90=264, 99=296, 99.9=472, 99.99=4005] [UPDATE: Count=4965, Max=4375, Min=103, Avg=250.04, 90=265, 99=295, 99.9=1481, 99.99=4375] 
+2024-06-13 17:32:36:707 30 sec: 29891 operations; 1000 current ops/sec; est completion in 32 seconds [READ: Count=5025, Max=714, Min=122, Avg=246.91, 90=249, 99=268, 99.9=340, 99.99=437] [UPDATE: Count=4975, Max=3343, Min=98, Avg=246.85, 90=249, 99=266, 99.9=299, 99.99=3343] 
+2024-06-13 17:32:46:707 40 sec: 39891 operations; 1000 current ops/sec; est completion in 22 seconds [READ: Count=5024, Max=717, Min=113, Avg=247.97, 90=252, 99=269, 99.9=322, 99.99=360] [UPDATE: Count=4976, Max=359, Min=98, Avg=241.89, 90=251, 99=267, 99.9=322, 99.99=359] 
+2024-06-13 17:32:56:707 50 sec: 49891 operations; 1000 current ops/sec; est completion in 12 seconds [READ: Count=4951, Max=1017, Min=107, Avg=241.38, 90=267, 99=292, 99.9=320, 99.99=1017] [UPDATE: Count=5049, Max=599, Min=99, Avg=237.45, 90=267, 99=291, 99.9=316, 99.99=514] 
+2024-06-13 17:33:06:707 60 sec: 59891 operations; 1000 current ops/sec; est completion in 2 second [READ: Count=4997, Max=546, Min=106, Avg=226.9, 90=268, 99=284, 99.9=323, 99.99=546] [UPDATE: Count=5003, Max=634, Min=103, Avg=219.21, 90=269, 99=283, 99.9=298, 99.99=345] 
+2024-06-13 17:33:07:817 61 sec: 61000 operations; 998.2 current ops/sec; [READ: Count=596, Max=621, Min=106, Avg=238.95, 90=269, 99=285, 99.9=351, 99.99=621] [CLEANUP: Count=1, Max=1099, Min=1099, Avg=1099, 90=1099, 99=1099, 99.9=1099, 99.99=1099] [UPDATE: Count=513, Max=289, Min=103, Avg=227.72, 90=271, 99=283, 99.9=288, 99.99=289] 
+[OVERALL], RunTime(ms), 61114
+[OVERALL], Throughput(ops/sec), 998.1346336355009
+[TOTAL_GCS_Copy], Count, 6
+[TOTAL_GC_TIME_Copy], Time(ms), 13
+[TOTAL_GC_TIME_%_Copy], Time(%), 0.021271721700428705
+[TOTAL_GCS_MarkSweepCompact], Count, 0
+[TOTAL_GC_TIME_MarkSweepCompact], Time(ms), 0
+[TOTAL_GC_TIME_%_MarkSweepCompact], Time(%), 0.0
+[TOTAL_GCs], Count, 6
+[TOTAL_GC_TIME], Time(ms), 13
+[TOTAL_GC_TIME_%], Time(%), 0.021271721700428705
+[READ], Operations, 30612
+[READ], AverageLatency(us), 249.79184633477067
+[READ], MinLatency(us), 106
+[READ], MaxLatency(us), 46367
+[READ], 95thPercentileLatency(us), 271
+[READ], 99thPercentileLatency(us), 307
+[READ], Return=OK, 30612
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 1099.0
+[CLEANUP], MinLatency(us), 1099
+[CLEANUP], MaxLatency(us), 1099
+[CLEANUP], 95thPercentileLatency(us), 1099
+[CLEANUP], 99thPercentileLatency(us), 1099
+[UPDATE], Operations, 30388
+[UPDATE], AverageLatency(us), 244.4692312755035
+[UPDATE], MinLatency(us), 98
+[UPDATE], MaxLatency(us), 7347
+[UPDATE], 95thPercentileLatency(us), 273
+[UPDATE], 99thPercentileLatency(us), 330
+[UPDATE], Return=OK, 30388
+AUTOTEST_DONE

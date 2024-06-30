@@ -1,0 +1,60 @@
+/nix/store/2vwkssqpzykk37r996cafq7x63imf4sp-openjdk-21+35/bin/java  -classpath /nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/conf:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/core-0.17.0.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/HdrHistogram-2.1.4.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/htrace-core4-4.1.0-incubating.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/jackson-core-asl-1.9.4.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/lib/jackson-mapper-asl-1.9.4.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/redis-binding/lib/commons-pool2-2.4.2.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/redis-binding/lib/jedis-2.9.0.jar:/nix/store/zw02np72fzsmga6s5mphhw7x8qlzf4sv-ycsb-0.17.0/share/redis-binding/lib/redis-binding-0.17.0.jar site.ycsb.Client -t -db site.ycsb.db.RedisClient -s -P /home/host/vmuxIO/test/moonprogs//../../ycsb/share/workloads/workloada -p redis.host=10.1.0.2 -p redis.port=6379 -p operationcount=429496729 -p maxexecutiontime=61 -threads 1
+Command line: -t -db site.ycsb.db.RedisClient -s -P /home/host/vmuxIO/test/moonprogs//../../ycsb/share/workloads/workloada -p redis.host=10.1.0.2 -p redis.port=6379 -p operationcount=429496729 -p maxexecutiontime=61 -threads 1
+YCSB Client 0.17.0
+
+Loading workload...
+Starting test.
+Maximum execution time specified as: 61 secs
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2024-06-30 01:37:46:175 0 sec: 0 operations; est completion in 0 second 
+2024-06-30 01:37:55:993 10 sec: 9192 operations; 919.2 current ops/sec; est completion in 5 days 9 hours [READ: Count=4679, Max=209023, Min=87, Avg=938.79, 90=282, 99=3153, 99.9=207615, 99.99=209023] [UPDATE: Count=4513, Max=208895, Min=88, Avg=1155.59, 90=304, 99=3223, 99.9=206847, 99.99=208895] 
+2024-06-30 01:38:05:993 20 sec: 19092 operations; 990 current ops/sec; est completion in 5 days 4 hours [READ: Count=4970, Max=210175, Min=86, Avg=1156.58, 90=260, 99=2763, 99.9=207743, 99.99=210175] [UPDATE: Count=4932, Max=208895, Min=83, Avg=872, 90=247, 99=3007, 99.9=205183, 99.99=208895] 
+2024-06-30 01:38:15:993 30 sec: 28864 operations; 977.2 current ops/sec; est completion in 5 days 3 hours [READ: Count=4863, Max=209151, Min=85, Avg=830.53, 90=254, 99=2809, 99.9=204671, 99.99=209151] [UPDATE: Count=4907, Max=209279, Min=84, Avg=1200.53, 90=256, 99=3013, 99.9=207231, 99.99=209279] 
+2024-06-30 01:38:25:993 40 sec: 36457 operations; 759.3 current ops/sec; est completion in 5 days 10 hours [READ: Count=3801, Max=211839, Min=87, Avg=1298.12, 90=271, 99=3121, 99.9=208127, 99.99=211839] [UPDATE: Count=3792, Max=209023, Min=86, Avg=962.6, 90=247, 99=2735, 99.9=208127, 99.99=209023] 
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:202)
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40)
+	at redis.clients.jedis.Protocol.process(Protocol.java:151)
+	at redis.clients.jedis.Protocol.read(Protocol.java:215)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340)
+	at redis.clients.jedis.Connection.getBinaryMultiBulkReply(Connection.java:276)
+	at redis.clients.jedis.Jedis.hgetAll(Jedis.java:848)
+	at site.ycsb.db.RedisClient.read(RedisClient.java:118)
+	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:196)
+	... 12 more
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:202)
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40)
+	at redis.clients.jedis.Protocol.process(Protocol.java:151)
+	at redis.clients.jedis.Protocol.read(Protocol.java:215)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340)
+	at redis.clients.jedis.Connection.getBinaryMultiBulkReply(Connection.java:276)
+	at redis.clients.jedis.Jedis.hgetAll(Jedis.java:848)
+	at site.ycsb.db.RedisClient.read(RedisClient.java:118)
+	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:196)
+	... 12 more
+AUTOTEST_DONE

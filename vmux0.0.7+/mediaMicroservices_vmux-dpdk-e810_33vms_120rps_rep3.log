@@ -1,2 +1,86 @@
-unable to connect to 10.1.0.42:8080 No route to host
+Running 1m test @ http://10.1.0.42:8080/wrk2-api/review/compose
+  8 threads and 16 connections
+
+  Thread calibration: mean lat.: 7.867ms, rate sampling interval: 16ms
+  Thread calibration: mean lat.: 7.385ms, rate sampling interval: 15ms
+  Thread calibration: mean lat.: 7.606ms, rate sampling interval: 16ms
+  Thread calibration: mean lat.: 7.881ms, rate sampling interval: 17ms
+  Thread calibration: mean lat.: 7.646ms, rate sampling interval: 17ms
+  Thread calibration: mean lat.: 7.287ms, rate sampling interval: 16ms
+  Thread calibration: mean lat.: 7.834ms, rate sampling interval: 16ms
+  Thread calibration: mean lat.: 8.851ms, rate sampling interval: 21ms
+
+-----------------------------------------------------------------------
+Test Results @ http://10.1.0.42:8080/wrk2-api/review/compose 
+  Thread Stats   Avg      Stdev     99%   +/- Stdev
+    Latency     7.72ms    1.43ms  11.98ms   86.34%
+    Req/Sec     1.08      8.18    62.00     98.26%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    7.51ms
+ 75.000%    7.95ms
+ 90.000%    8.94ms
+ 99.000%   11.98ms
+ 99.900%   26.33ms
+ 99.990%   26.33ms
+ 99.999%   26.33ms
+100.000%   26.33ms
+
+  Detailed Percentile spectrum:
+       Value   Percentile   TotalCount 1/(1-Percentile)
+
+       5.259     0.000000            1         1.00
+       6.587     0.100000           44         1.11
+       6.955     0.200000           87         1.25
+       7.159     0.300000          130         1.43
+       7.347     0.400000          174         1.67
+       7.511     0.500000          216         2.00
+       7.587     0.550000          238         2.22
+       7.671     0.600000          261         2.50
+       7.771     0.650000          283         2.86
+       7.843     0.700000          303         3.33
+       7.947     0.750000          324         4.00
+       8.019     0.775000          335         4.44
+       8.175     0.800000          346         5.00
+       8.263     0.825000          357         5.71
+       8.383     0.850000          368         6.67
+       8.535     0.875000          378         8.00
+       8.687     0.887500          384         8.89
+       8.935     0.900000          389        10.00
+       9.175     0.912500          395        11.43
+       9.375     0.925000          400        13.33
+       9.847     0.937500          405        16.00
+      10.271     0.943750          408        17.78
+      10.447     0.950000          411        20.00
+      10.719     0.956250          414        22.86
+      10.743     0.962500          416        26.67
+      10.823     0.968750          419        32.00
+      10.847     0.971875          421        35.56
+      10.855     0.975000          422        40.00
+      10.951     0.978125          423        45.71
+      10.959     0.981250          424        53.33
+      11.871     0.984375          426        64.00
+      11.871     0.985938          426        71.11
+      11.927     0.987500          427        80.00
+      11.983     0.989062          428        91.43
+      11.983     0.990625          428       106.67
+      12.175     0.992188          429       128.00
+      12.175     0.992969          429       142.22
+      12.255     0.993750          430       160.00
+      12.255     0.994531          430       182.86
+      12.255     0.995313          430       213.33
+      13.031     0.996094          431       256.00
+      13.031     0.996484          431       284.44
+      13.031     0.996875          431       320.00
+      13.031     0.997266          431       365.71
+      13.031     0.997656          431       426.67
+      26.335     0.998047          432       512.00
+      26.335     1.000000          432          inf
+#[Mean    =        7.719, StdDeviation   =        1.430]
+#[Max     =       26.320, Total count    =          432]
+#[Buckets =           27, SubBuckets     =         2048]
+-----------------------------------------------------------------------
+  530 requests in 1.03m, 95.23KB read
+  Socket errors: connect 0, read 0, write 0, timeout 158
+Requests/sec:      8.55  
+Transfer/sec:      1.54KB
 AUTOTEST_DONE

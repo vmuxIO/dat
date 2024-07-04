@@ -1,2 +1,87 @@
-unable to connect to 10.1.0.44:8080 No route to host
+Running 1m test @ http://10.1.0.44:8080
+  8 threads and 16 connections
+
+  Thread calibration: mean lat.: 2.592ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 2.791ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 2.193ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 1.908ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 2.544ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 3.074ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 3.482ms, rate sampling interval: 10ms
+  Thread calibration: mean lat.: 2.989ms, rate sampling interval: 10ms
+
+-----------------------------------------------------------------------
+Test Results @ http://10.1.0.44:8080 
+  Thread Stats   Avg      Stdev     99%   +/- Stdev
+    Latency     2.38ms    1.29ms   7.01ms   86.54%
+    Req/Sec     1.11     10.83   100.00     98.95%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.97ms
+ 75.000%    2.44ms
+ 90.000%    4.71ms
+ 99.000%    7.01ms
+ 99.900%    7.95ms
+ 99.990%    7.95ms
+ 99.999%    7.95ms
+100.000%    7.95ms
+
+  Detailed Percentile spectrum:
+       Value   Percentile   TotalCount 1/(1-Percentile)
+
+       0.923     0.000000            1         1.00
+       1.468     0.100000           44         1.11
+       1.624     0.200000           88         1.25
+       1.773     0.300000          130         1.43
+       1.843     0.400000          173         1.67
+       1.973     0.500000          216         2.00
+       2.028     0.550000          238         2.22
+       2.105     0.600000          259         2.50
+       2.231     0.650000          281         2.86
+       2.315     0.700000          302         3.33
+       2.437     0.750000          324         4.00
+       2.497     0.775000          335         4.44
+       2.557     0.800000          345         5.00
+       2.609     0.825000          356         5.71
+       2.729     0.850000          367         6.67
+       4.029     0.875000          378         8.00
+       4.487     0.887500          383         8.89
+       4.707     0.900000          388        10.00
+       4.887     0.912500          394        11.43
+       5.123     0.925000          399        13.33
+       5.379     0.937500          406        16.00
+       5.515     0.943750          407        17.78
+       5.603     0.950000          410        20.00
+       5.727     0.956250          413        22.86
+       5.823     0.962500          415        26.67
+       6.003     0.968750          418        32.00
+       6.019     0.971875          419        35.56
+       6.235     0.975000          421        40.00
+       6.259     0.978125          422        45.71
+       6.399     0.981250          423        53.33
+       6.851     0.984375          425        64.00
+       6.851     0.985938          425        71.11
+       6.923     0.987500          426        80.00
+       7.015     0.989062          427        91.43
+       7.015     0.990625          427       106.67
+       7.455     0.992188          428       128.00
+       7.455     0.992969          428       142.22
+       7.539     0.993750          429       160.00
+       7.539     0.994531          429       182.86
+       7.539     0.995313          429       213.33
+       7.803     0.996094          430       256.00
+       7.803     0.996484          430       284.44
+       7.803     0.996875          430       320.00
+       7.803     0.997266          430       365.71
+       7.803     0.997656          430       426.67
+       7.947     0.998047          431       512.00
+       7.947     1.000000          431          inf
+#[Mean    =        2.384, StdDeviation   =        1.289]
+#[Max     =        7.944, Total count    =          431]
+#[Buckets =           27, SubBuckets     =         2048]
+-----------------------------------------------------------------------
+  530 requests in 1.03m, 107.24KB read
+  Socket errors: connect 0, read 0, write 0, timeout 156
+  Non-2xx or 3xx responses: 63
+Requests/sec:      8.55  
+Transfer/sec:      1.73KB
 AUTOTEST_DONE

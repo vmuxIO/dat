@@ -7,56 +7,45 @@ Loading workload...
 Starting test.
 Maximum execution time specified as: 61 secs
 DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
-2025-01-14 22:00:07:586 0 sec: 0 operations; est completion in 0 second 
-2025-01-14 22:00:16:122 10 sec: 518 operations; 51.71 current ops/sec; est completion in 96 days 3 hours [READ: Count=264, Max=243455, Min=95, Avg=14828.1, 90=53183, 99=95423, 99.9=243455, 99.99=243455] [UPDATE: Count=260, Max=560639, Min=103, Avg=17568.27, 90=49247, 99=91199, 99.9=560639, 99.99=560639] 
-2025-01-14 22:00:26:113 20 sec: 2286 operations; 176.96 current ops/sec; est completion in 43 days 12 hours [READ: Count=928, Max=133631, Min=64, Avg=4921.1, 90=24591, 99=72063, 99.9=112127, 99.99=133631] [UPDATE: Count=834, Max=115135, Min=61, Avg=5997.13, 90=26799, 99=78847, 99.9=107263, 99.99=115135] 
-2025-01-14 22:00:36:121 30 sec: 3519 operations; 123.2 current ops/sec; est completion in 42 days 9 hours [READ: Count=607, Max=125951, Min=60, Avg=7738.29, 90=31871, 99=88255, 99.9=115647, 99.99=125951] [UPDATE: Count=626, Max=134399, Min=56, Avg=8207.78, 90=28927, 99=99327, 99.9=118911, 99.99=134399] 
-2025-01-14 22:00:46:114 40 sec: 4756 operations; 123.79 current ops/sec; est completion in 41 days 19 hours [READ: Count=602, Max=135935, Min=61, Avg=8716.54, 90=39007, 99=95999, 99.9=122687, 99.99=135935] [UPDATE: Count=635, Max=113727, Min=57, Avg=7439.73, 90=31983, 99=89791, 99.9=101951, 99.99=113727] 
-2025-01-14 22:00:56:109 50 sec: 5519 operations; 76.34 current ops/sec; est completion in 45 days [READ: Count=378, Max=221439, Min=60, Avg=11757.46, 90=50015, 99=87295, 99.9=221439, 99.99=221439] [UPDATE: Count=385, Max=146815, Min=56, Avg=12678.27, 90=50975, 99=106623, 99.9=146815, 99.99=146815] 
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
-	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:202)
-	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40)
-	at redis.clients.jedis.Protocol.process(Protocol.java:151)
-	at redis.clients.jedis.Protocol.read(Protocol.java:215)
-	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340)
-	at redis.clients.jedis.Connection.getBinaryMultiBulkReply(Connection.java:276)
-	at redis.clients.jedis.Jedis.hgetAll(Jedis.java:848)
-	at site.ycsb.db.RedisClient.read(RedisClient.java:118)
-	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
-	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
-	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
-	at site.ycsb.ClientThread.run(ClientThread.java:122)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.net.SocketTimeoutException: Read timed out
-	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
-	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
-	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
-	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
-	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
-	at java.base/java.io.InputStream.read(InputStream.java:220)
-	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:196)
-	... 12 more
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
-	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:202)
-	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40)
-	at redis.clients.jedis.Protocol.process(Protocol.java:151)
-	at redis.clients.jedis.Protocol.read(Protocol.java:215)
-	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340)
-	at redis.clients.jedis.Connection.getBinaryMultiBulkReply(Connection.java:276)
-	at redis.clients.jedis.Jedis.hgetAll(Jedis.java:848)
-	at site.ycsb.db.RedisClient.read(RedisClient.java:118)
-	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
-	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
-	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
-	at site.ycsb.ClientThread.run(ClientThread.java:122)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.net.SocketTimeoutException: Read timed out
-	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
-	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
-	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
-	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
-	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
-	at java.base/java.io.InputStream.read(InputStream.java:220)
-	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:196)
-	... 12 more
+2025-01-14 22:42:47:814 0 sec: 0 operations; est completion in 0 second 
+2025-01-14 22:42:54:459 10 sec: 42 operations; 4.2 current ops/sec; est completion in 1183 days 19 hours [READ: Count=19, Max=630783, Min=426, Avg=122420.32, 90=143871, 99=630783, 99.9=630783, 99.99=630783] [UPDATE: Count=25, Max=1033727, Min=262, Avg=125026.48, 90=143103, 99=1033727, 99.9=1033727, 99.99=1033727] 
+2025-01-14 22:43:04:465 20 sec: 2364 operations; 232.04 current ops/sec; est completion in 42 days 1 hour [READ: Count=1127, Max=234751, Min=65, Avg=3735.52, 90=13535, 99=65087, 99.9=118527, 99.99=234751] [UPDATE: Count=1193, Max=157951, Min=61, Avg=4295.31, 90=17039, 99=63679, 99.9=107967, 99.99=157951] 
+2025-01-14 22:43:14:462 30 sec: 4122 operations; 175.96 current ops/sec; est completion in 36 days 4 hours [READ: Count=896, Max=80511, Min=61, Avg=5575.47, 90=26463, 99=44159, 99.9=77503, 99.99=80511] [UPDATE: Count=862, Max=122239, Min=58, Avg=5674.56, 90=27551, 99=41567, 99.9=55519, 99.99=122239] 
+2025-01-14 22:43:24:484 40 sec: 7221 operations; 309.03 current ops/sec; est completion in 27 days 13 hours [READ: Count=1569, Max=241023, Min=53, Avg=3307.69, 90=1279, 99=101247, 99.9=147199, 99.99=241023] [UPDATE: Count=1530, Max=156159, Min=53, Avg=2935.78, 90=1267, 99=82495, 99.9=144511, 99.99=156159] 
+2025-01-14 22:43:34:479 50 sec: 7676 operations; 45.53 current ops/sec; est completion in 32 days 9 hours [READ: Count=238, Max=172287, Min=54, Avg=21893.88, 90=49983, 99=131199, 99.9=172287, 99.99=172287] [UPDATE: Count=218, Max=151551, Min=53, Avg=22173.1, 90=55007, 99=143999, 99.9=151551, 99.99=151551] 
+2025-01-14 22:43:44:459 60 sec: 10011 operations; 233.94 current ops/sec; est completion in 29 days 19 hours [READ: Count=1220, Max=167167, Min=51, Avg=4054.46, 90=3167, 99=108031, 99.9=158079, 99.99=167167] [UPDATE: Count=1114, Max=441087, Min=49, Avg=4300.69, 90=2003, 99=102591, 99.9=237567, 99.99=441087] 
+Maximum time elapsed. Requesting stop for the workload.
+Stop requested for workload. Now Joining!
+2025-01-14 22:43:45:671 61 sec: 10027 operations; 13.21 current ops/sec; est completion in 30 days 8 hours [READ: Count=7, Max=173183, Min=2338, Avg=74151.29, 90=119359, 99=173183, 99.9=173183, 99.99=173183] [CLEANUP: Count=1, Max=32095, Min=32080, Avg=32088, 90=32095, 99=32095, 99.9=32095, 99.99=32095] [UPDATE: Count=9, Max=207103, Min=102, Avg=84963.78, 90=139007, 99=207103, 99.9=207103, 99.99=207103] 
+[OVERALL], RunTime(ms), 61215
+[OVERALL], Throughput(ops/sec), 163.79972229028832
+[TOTAL_GCS_Copy], Count, 1
+[TOTAL_GC_TIME_Copy], Time(ms), 240
+[TOTAL_GC_TIME_%_Copy], Time(%), 0.39206076941926
+[TOTAL_GCS_MarkSweepCompact], Count, 0
+[TOTAL_GC_TIME_MarkSweepCompact], Time(ms), 0
+[TOTAL_GC_TIME_%_MarkSweepCompact], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 240
+[TOTAL_GC_TIME_%], Time(%), 0.39206076941926
+[READ], Operations, 5076
+[READ], AverageLatency(us), 5397.465130023641
+[READ], MinLatency(us), 51
+[READ], MaxLatency(us), 630783
+[READ], 95thPercentileLatency(us), 30175
+[READ], 99thPercentileLatency(us), 101247
+[READ], Return=OK, 5076
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 32088.0
+[CLEANUP], MinLatency(us), 32080
+[CLEANUP], MaxLatency(us), 32095
+[CLEANUP], 95thPercentileLatency(us), 32095
+[CLEANUP], 99thPercentileLatency(us), 32095
+[UPDATE], Operations, 4951
+[UPDATE], AverageLatency(us), 5659.982023833569
+[UPDATE], MinLatency(us), 49
+[UPDATE], MaxLatency(us), 1033727
+[UPDATE], 95thPercentileLatency(us), 31055
+[UPDATE], 99thPercentileLatency(us), 99583
+[UPDATE], Return=OK, 4951
 AUTOTEST_DONE

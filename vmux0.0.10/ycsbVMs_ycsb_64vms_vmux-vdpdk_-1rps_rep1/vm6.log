@@ -6,10 +6,54 @@ Loading workload...
  (might take a few minutes for large data sets)
 Starting test.
 Maximum execution time specified as: 61 secs
-2025-01-14 22:05:37:179 0 sec: 0 operations; est completion in 0 second 
+2025-01-14 22:47:06:815 0 sec: 0 operations; est completion in 0 second 
 DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
-2025-01-14 22:05:45:101 10 sec: 500 operations; 49.93 current ops/sec; est completion in 99 days 13 hours [READ: Count=243, Max=552447, Min=93, Avg=13471.65, 90=35711, 99=68351, 99.9=552447, 99.99=552447] [UPDATE: Count=258, Max=333567, Min=96, Avg=11913.68, 90=35711, 99=62911, 99.9=333567, 99.99=333567] 
-2025-01-14 22:05:55:086 20 sec: 1172 operations; 67.3 current ops/sec; est completion in 84 days 19 hours [READ: Count=329, Max=111871, Min=68, Avg=14823.93, 90=36191, 99=95423, 99.9=111871, 99.99=111871] [UPDATE: Count=342, Max=111679, Min=66, Avg=14647.19, 90=32959, 99=92671, 99.9=111679, 99.99=111679] 
-2025-01-14 22:06:05:103 30 sec: 1819 operations; 64.6 current ops/sec; est completion in 82 days [READ: Count=318, Max=101887, Min=66, Avg=14881.61, 90=44031, 99=80511, 99.9=101887, 99.99=101887] [UPDATE: Count=329, Max=156671, Min=65, Avg=15050.15, 90=48831, 99=92927, 99.9=156671, 99.99=156671] 
-2025-01-14 22:06:15:088 40 sec: 3307 operations; 149.01 current ops/sec; est completion in 60 days 3 hours [READ: Count=734, Max=229759, Min=61, Avg=6671.69, 90=24303, 99=77119, 99.9=163839, 99.99=229759] [UPDATE: Count=754, Max=112063, Min=59, Avg=6679.2, 90=24255, 99=79871, 99.9=96767, 99.99=112063] 
-2025-01-14 22:06:25:090 50 sec: 4997 operations; 168.98 current ops/sec; est completion in 49 days 17 hours [READ: Count=843, Max=104127, Min=59, Avg=4823.94, 90=16543, 99=71359, 99.9=97983, 99.99=104127] [UPDATE: Count=847, Max=130495, Min=57, Avg=6866.89, 90=23823, 99=86271, 99.9=122815, 99.99=130495] 
+2025-01-14 22:47:15:106 10 sec: 261 operations; 26.1 current ops/sec; est completion in 190 days 11 hours [READ: Count=124, Max=1665023, Min=99, Avg=23095.08, 90=28159, 99=69439, 99.9=1665023, 99.99=1665023] [UPDATE: Count=138, Max=243199, Min=100, Avg=14131.08, 90=29231, 99=59071, 99.9=243199, 99.99=243199] 
+2025-01-14 22:47:25:117 20 sec: 1354 operations; 109.18 current ops/sec; est completion in 73 days 11 hours [READ: Count=558, Max=131071, Min=65, Avg=9138.24, 90=30863, 99=89919, 99.9=130687, 99.99=131071] [UPDATE: Count=534, Max=156799, Min=63, Avg=8593.29, 90=27983, 99=98239, 99.9=134143, 99.99=156799] 
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:202)
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40)
+	at redis.clients.jedis.Protocol.process(Protocol.java:151)
+	at redis.clients.jedis.Protocol.read(Protocol.java:215)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:239)
+	at redis.clients.jedis.Jedis.hmset(Jedis.java:705)
+	at site.ycsb.db.RedisClient.update(RedisClient.java:156)
+	at site.ycsb.DBWrapper.update(DBWrapper.java:198)
+	at site.ycsb.workloads.CoreWorkload.doTransactionUpdate(CoreWorkload.java:814)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:647)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:196)
+	... 12 more
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:202)
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40)
+	at redis.clients.jedis.Protocol.process(Protocol.java:151)
+	at redis.clients.jedis.Protocol.read(Protocol.java:215)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:239)
+	at redis.clients.jedis.Jedis.hmset(Jedis.java:705)
+	at site.ycsb.db.RedisClient.update(RedisClient.java:156)
+	at site.ycsb.DBWrapper.update(DBWrapper.java:198)
+	at site.ycsb.workloads.CoreWorkload.doTransactionUpdate(CoreWorkload.java:814)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:647)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.io.InputStream.read(InputStream.java:220)
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:196)
+	... 12 more
+AUTOTEST_DONE

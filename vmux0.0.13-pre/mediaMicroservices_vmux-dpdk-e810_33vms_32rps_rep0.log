@@ -1,0 +1,101 @@
+Running 1m test @ http://10.1.0.42:8080/wrk2-api/review/compose
+  8 threads and 16 connections
+
+  Thread calibration: mean lat.: 9.351ms, rate sampling interval: 23ms
+  Thread calibration: mean lat.: 8.315ms, rate sampling interval: 20ms
+  Thread calibration: mean lat.: 8.754ms, rate sampling interval: 24ms
+  Thread calibration: mean lat.: 8.784ms, rate sampling interval: 23ms
+  Thread calibration: mean lat.: 9.094ms, rate sampling interval: 23ms
+  Thread calibration: mean lat.: 8.716ms, rate sampling interval: 23ms
+  Thread calibration: mean lat.: 9.040ms, rate sampling interval: 24ms
+  Thread calibration: mean lat.: 9.389ms, rate sampling interval: 23ms
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+reconnect_socket
+
+-----------------------------------------------------------------------
+Test Results @ http://10.1.0.42:8080/wrk2-api/review/compose 
+  Thread Stats   Avg      Stdev     99%   +/- Stdev
+    Latency    32.81ms  143.63ms 797.70ms   96.64%
+    Req/Sec     3.97     13.14    50.00     91.34%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    7.87ms
+ 75.000%   10.42ms
+ 90.000%   14.41ms
+ 99.000%  797.70ms
+ 99.900%    1.64s 
+ 99.990%    1.69s 
+ 99.999%    1.69s 
+100.000%    1.69s 
+
+  Detailed Percentile spectrum:
+       Value   Percentile   TotalCount 1/(1-Percentile)
+
+       4.959     0.000000            1         1.00
+       7.227     0.100000          161         1.11
+       7.395     0.200000          323         1.25
+       7.539     0.300000          488         1.43
+       7.691     0.400000          644         1.67
+       7.867     0.500000          808         2.00
+       7.991     0.550000          884         2.22
+       8.175     0.600000          966         2.50
+       8.607     0.650000         1045         2.86
+       9.631     0.700000         1127         3.33
+      10.423     0.750000         1206         4.00
+      10.967     0.775000         1247         4.44
+      11.471     0.800000         1286         5.00
+      11.791     0.825000         1326         5.71
+      12.055     0.850000         1366         6.67
+      12.719     0.875000         1407         8.00
+      13.319     0.887500         1427         8.89
+      14.431     0.900000         1447        10.00
+      15.167     0.912500         1468        11.43
+      15.879     0.925000         1487        13.33
+      17.215     0.937500         1507        16.00
+      18.303     0.943750         1517        17.78
+      19.247     0.950000         1527        20.00
+      25.279     0.956250         1537        22.86
+      99.071     0.962500         1547        26.67
+     273.151     0.968750         1557        32.00
+     326.399     0.971875         1562        35.56
+     395.519     0.975000         1568        40.00
+     444.927     0.978125         1572        45.71
+     532.479     0.981250         1577        53.33
+     616.447     0.984375         1582        64.00
+     643.071     0.985938         1585        71.11
+     685.055     0.987500         1587        80.00
+     750.079     0.989062         1590        91.43
+     812.543     0.990625         1592       106.67
+     892.927     0.992188         1595       128.00
+     906.751     0.992969         1596       142.22
+     970.239     0.993750         1597       160.00
+    1080.319     0.994531         1599       182.86
+    1157.119     0.995313         1600       213.33
+    1382.399     0.996094         1601       256.00
+    1424.383     0.996484         1602       284.44
+    1424.383     0.996875         1602       320.00
+    1476.607     0.997266         1603       365.71
+    1565.695     0.997656         1604       426.67
+    1565.695     0.998047         1604       512.00
+    1644.543     0.998242         1605       568.89
+    1644.543     0.998437         1605       640.00
+    1644.543     0.998633         1605       731.43
+    1662.975     0.998828         1606       853.33
+    1662.975     0.999023         1606      1024.00
+    1662.975     0.999121         1606      1137.78
+    1662.975     0.999219         1606      1280.00
+    1662.975     0.999316         1606      1462.86
+    1691.647     0.999414         1607      1706.67
+    1691.647     1.000000         1607          inf
+#[Mean    =       32.808, StdDeviation   =      143.631]
+#[Max     =     1690.624, Total count    =         1607]
+#[Buckets =           27, SubBuckets     =         2048]
+-----------------------------------------------------------------------
+  1962 requests in 1.03m, 353.39KB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+  Non-2xx or 3xx responses: 5
+Requests/sec:     31.69  
+Transfer/sec:      5.71KB
+AUTOTEST_DONE
